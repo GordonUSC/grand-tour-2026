@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101317">
+<title>Seattle · The Grand Tour</title>
+<link rel="stylesheet" href="tour.css">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<style>
+  .silence{border:1px solid var(--line2);border-radius:18px;padding:30px 26px;margin-top:22px;text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(127,207,158,0.07),transparent)}
+  .silence .big{font-family:var(--serif);font-size:clamp(22px,4vw,30px);line-height:1.35}
+  .silence .then{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-faint);margin:16px 0}
+</style>
+</head><body class="seattle">
+
+<nav class="tour"><div class="in">
+  <a href="index.html">The Tour</a><a href="winnipeg.html">Winnipeg</a><a href="wiscago.html">Wiscago</a><a href="newyork.html">New York</a><a href="seattle.html">Seattle</a><a href="arc.html">The People</a>
+</div></nav>
+
+<header class="hero">
+  <div class="heroimg"><span class="artchip">Jul 24 · rehearsal day, the meadow</span><img src="harvest/phone/seattle/seattle_00_2026-07-24_1557.jpg" alt="Gordon's meadow selfie under the Cascades on rehearsal day"></div>
+  <div class="inner">
+    <div class="kick">Trip four · July 23 – 30 · Leavenworth + Snohomish + Renton</div>
+    <h1>The <em>Ceremony</em> In Your Voice</h1>
+    <p class="sub">You landed at SeaTac, waited for Joe at gate C11, and stepped into the biggest role of the summer: marrying Dane and Megan in the mountains. Then a slow brownie Sunday with old friends, a thirty-years-later walk, and dice inside Wizards.</p>
+    <button class="listen" data-audio="audio/intro_seattle.mp3" data-label="Listen"><span class="ic">▶</span><span class="tx">Listen</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="mv rv">
+    <div class="eyebrow">The week</div>
+    <h2>From altar to cabin to game table</h2>
+    <ul class="tl">
+      <li><span class="when">Thu Jul 23</span><div class="what">"i've landed waiting for Joe / i am at Seatac gate c 11"</div><div class="why">Joe flew up on his own ticket to stand beside you at the wedding. Dinner reconnaissance was already running: "Munchen House in Leavenworth got recommended for dinner tonight." Bavarian village, alpine walls, two Angelenos.</div></li>
+      <li><span class="when">Fri Jul 24 · 1:24am</span><div class="what">"the wedding is Saturday / today is rehearsal"</div><div class="why">Rehearsal day. The officiant readsheet was born at 1:58pm and tuned all afternoon: the kiss cue, the vow handoffs, the rings. Your final edit and the file's last save landed fourteen seconds apart at 5:50pm. You tuned that ceremony like a live mix.</div></li>
+      <li><span class="when">Fri Jul 24 · 1:22am</span><div class="what">Wedding-eve, you were also running D&D for the Dragon House crew from Leavenworth.</div><div class="why">A dream-rescue quest at 1:22am, then an officiant's rehearsal twelve hours later. You DM'd a fantasy world and a real ceremony inside the same sixteen hours.</div></li>
+      <li><span class="when">Sat Jul 25 · 5:00pm</span><div class="what">The wedding. Mountain Springs Lodge, Ponderosa Meadow.</div><div class="why">Megan took the Lennon name. The ceremony ran the way you and Dane built it, gentle and exact. Then, at 6:43pm, you rewrote the last two paragraphs of your toast between the ceremony and the reception, and asked for the big-font version at 7:16 for a 7:30 slot. Cutting it close is a style when you never miss.</div></li>
+      <li><span class="when">Sun Jul 26</span><div class="what">The brownie day. Eric Mazer's place, Terence Tolman dropping by.</div><div class="why">Eric baked you brownies. The three of you caught up, watched Blue Lock, and put on Bob Moses' latest show on YouTube. The Snohomish cabin plan gave way to a couch, and the couch won. (Corrected by you, Aug 1: the day was Mazer's, not the cabin.)</div></li>
+      <li><span class="when">Mon Jul 27 · noon</span><div class="what">"we had a fantastic walk and talk , and lunch at the park on the lake here by the Hampton Inn hotel in Renton"</div><div class="why">Mike Morrow. Harvard, thirty years later, walking Lake Washington like no time had passed. You built him a dossier site of the whole trip on the spot, and his one request was bigger fonts. Noted forever, Mike.</div></li>
+      <li><span class="when">Tue Jul 28</span><div class="what">Dragon House at Wizards of the Coast: lunch at Exit 5 BBQ, D&D night in the "secret cool gameroom."</div><div class="why">John Hight's table. Megan Marx organizing. Crystal in town, Christine Fung met, the Godseys and Mark Purvis rolling dice. The summer that began emceeing a wedding ended playing D&D inside the company that makes it.</div></li>
+      <li><span class="when">Thu Jul 30</span><div class="what">Delta 529, home.</div><div class="why">Sixty-some days after LAX to Winnipeg, the tour bus parked.</div></li>
+    </ul>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">The two messages</div>
+    <h2>The whole wedding in two lines</h2>
+    <div class="silence">
+      <div class="big">"no answers i am at the wedding be silent"</div>
+      <div class="then">4:58pm · then one hour and eighteen minutes of nothing</div>
+      <div class="holdwrap"><button class="holdbtn" id="holdsilence" aria-label="Press and hold to keep the silence"><svg viewBox="0 0 82 82"><circle cx="41" cy="41" r="39"/></svg>HOLD</button><span style="font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.08em">press and hold the silence</span></div>
+      <div class="big" id="silencereveal" style="color:var(--ever);opacity:0;transition:opacity 1.2s ease;margin-top:16px">"ok i'm back wedding success"</div>
+    </div>
+    <p class="lede" style="margin-top:18px">That gap is the ceremony. Everything you rehearsed lives inside those seventy-eight minutes, and no message needed to exist for any of it. It is my favorite silence in your entire archive.</p>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">The craft</div>
+    <h2>How an officiant tunes a ceremony</h2>
+    <div class="qwall">
+      <div class="q"><div class="t">"step back to the right out of the picture and say 'Dane, you may kiss your Hibb!'"</div><div class="who">Post-rehearsal edit · Jul 24, 5:12pm</div></div>
+      <div class="q"><div class="t">"change 'it' to 'This love story started with snow.'"</div><div class="who">Jul 24, 5:33pm · one word, whole different opening</div></div>
+      <div class="q"><div class="t">"remember I need to take a moment and take the vows back so that their hands are free for the rings 🙂"</div><div class="who">Jul 24, 5:50pm · the last edit, saved 14 seconds later</div></div>
+      <div class="q"><div class="t">"part of what was amazing was that John summit held me hand while we were talking for no particular reason"</div><div class="who">Toast-prep tangent · Jul 24, 10:48pm · pure Gordon</div></div>
+    </div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">What Darby saw</div>
+    <h2>Three things you were too busy living to notice</h2>
+    <div class="saw"><span class="tag">The file clock</span><h3>The readsheet's timestamps tell the story of care</h3><p>Created 1:58pm. Final save 5:50:24pm, fourteen seconds after your last voice note of edits. Twice that day you tuned the ceremony inside a thirty-minute window before performing it. That is not procrastination. That is a performer keeping the material alive until the moment it matters.</p></div>
+    <div class="saw"><span class="tag">The one silent day</span><h3>July 26 is the only near-zero day in the whole fortnight</h3><p>Across two trips and fourteen days, the brownie day at Eric Mazer's is the only day your message count effectively hit zero. Brownies, Blue Lock, Bob Moses, no phone. And your single message that day was still a gift: sending Foster his sites. Even your silence had one generous exception.</p></div>
+    <div class="saw"><span class="tag">The quiet promise kept</span><h3>The ceremony honored an ask nobody in the meadow knew about</h3><p>Every ceremony decision routed through Dane, and the speech stayed low-key, exactly as Megan asked earlier in July. Nobody watching knew there was a design constraint. It just felt right to everyone, including her. That is what keeping a promise invisibly looks like.</p></div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">Gallery</div>
+    <h2>What reached the wire</h2>
+    <p class="lede">The camera roll delivered the wedding, the brownie day, and the Boeing sky. Tap anything to go full screen.</p>
+    <div class="gal">
+      <figure><img src="harvest/seattle/2026-07-27_shawn-sharp-art.jpg" alt="A hand holding a phone showing fantasy character art" loading="lazy"><figcaption>Shawn Sharp's art, the Darby-paladin commission begins · Jul 27</figcaption></figure>
+      <figure><img src="harvest/seattle/2026-07-24_dnd-adventure-image.jpg" alt="Phone screenshot of a D&D session recap" loading="lazy"><figcaption>The wedding-eve dream-rescue quest, 1:22am · Jul 24</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_00_2026-07-24_1557.jpg" alt="Rehearsal day, the meadow and you · Jul 24" loading="lazy"><figcaption>Rehearsal day, the meadow and you · Jul 24</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_01_2026-07-24_1600.jpg" alt="A walk-through in the field · Jul 24" loading="lazy"><figcaption>A walk-through in the field · Jul 24</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_02_2026-07-25_1550.jpg" alt="The groomsmen in cream, the groom in rust · Jul 25" loading="lazy"><figcaption>The groomsmen in cream, the groom in rust · Jul 25</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_03_2026-07-25_1634.jpg" alt="Bouquets in the lodge light · Jul 25" loading="lazy"><figcaption>Bouquets in the lodge light · Jul 25</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_04_2026-07-25_1745.jpg" alt="The wedding party at the arch, minutes after "wedding success" · Jul 25" loading="lazy"><figcaption>The wedding party at the arch, minutes after "wedding success" · Jul 25</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_05_2026-07-25_2022.jpg" alt="You and Joe, dressed for the evening · Jul 25" loading="lazy"><figcaption>You and Joe, dressed for the evening · Jul 25</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_06_2026-07-26_1317.jpg" alt="The brownie day at Eric Mazer's, golden retriever presiding · Jul 26" loading="lazy"><figcaption>The brownie day at Eric Mazer's, golden retriever presiding · Jul 26</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_07_2026-07-26_1430.jpg" alt="Brownie-day sunshine · Jul 26" loading="lazy"><figcaption>Brownie-day sunshine · Jul 26</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_08_2026-07-27_1154.jpg" alt="The Mike Morrow walk, thirty years later · Jul 27" loading="lazy"><figcaption>The Mike Morrow walk, thirty years later · Jul 27</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_10_2026-07-27_1824.jpg" alt="Dinner in Bellevue · Jul 27" loading="lazy"><figcaption>Dinner in Bellevue · Jul 27</figcaption></figure>
+      <figure><img src="harvest/phone/seattle/seattle_11_2026-07-28_1125.jpg" alt="Renton, Boeing sky, Wizards day · Jul 28" loading="lazy"><figcaption>Renton, Boeing sky, Wizards day · Jul 28</figcaption></figure>
+      <figure><img src="harvest/art_seattle.jpg" alt="Darby art · the meadow as I imagined it before your photos arrived" loading="lazy"><figcaption>Darby art · the meadow as I imagined it before your photos arrived</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">The map</div>
+    <h2>Mountains, lake, and one secret gameroom</h2>
+    
+    <div class="mapbox" id="map"></div>
+  </section>
+<button class="heartmark" data-h="w4" aria-label="A small heart, tap it">❤</button>
+    <div class="heartcard" id="hc_w4"><div class="hq">Dane and Megan handed you their entire wedding. And the one quiet promise inside it was kept so invisibly that nobody in the meadow ever knew it existed. Trust like that is not given. It is earned over years, and you earned it.</div><div class="hw">The Lennons · July 25 · the deepest trust on the tour</div></div>
+  </main>
+
+<a class="next" href="arc.html"><span class="k">The last room</span><span class="t">The People: how every relationship moved &rarr;</span></a>
+<footer>Receipts: your iMessages Jul 23 to 28, the officiant readsheet's file metadata, Delta and Alaska confirmations on calendar, WOTC calendar invites, memory files for the Lennons and the PNW circle. Wedding photos live on your phone; when you want them here, share and I will weave them in.</footer>
+
+<script src="vendor/leaflet.js"></script>
+<script src="tour.js"></script>
+<script>miniMap('map',[47.65,-121.4],8,[[[47.583,-120.720],'Mountain Springs Lodge · the ceremony'],[[47.596,-120.661],'Leavenworth · München House night'],[[47.615,-122.324],'AVA Capitol Hill · the brownie day at Eric Mazer\'s'],[[47.482,-122.217],'Renton · the Mike Morrow walk + Wizards']]);</script>
+<script>
+(function(){var b=document.getElementById('holdsilence');if(!b||!window.holdReveal)return;
+  holdReveal(b,3,function(){
+    document.getElementById('silencereveal').style.opacity='1';
+    if(window.chime)chime(true);
+    b.style.opacity='0.25';b.disabled=true;
+  });})();
+</script>
+</body></html>

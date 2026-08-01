@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101317">
+<title>The Grand Tour · Summer 2026</title>
+<link rel="stylesheet" href="tour.css">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<style>
+  .citycards{display:grid;gap:14px;margin-top:22px}
+  .citycard{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);position:relative}
+  .citycard .img{aspect-ratio:16/7;overflow:hidden;background:var(--ground-3)}
+  .citycard .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+  .citycard:hover .img img{transform:scale(1.04)}
+  .citycard .body{padding:18px 20px 20px}
+  .citycard .k{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase}
+  .citycard h3{font-size:26px;margin-top:6px}
+  .citycard p{color:var(--ink-soft);font-size:15.5px;margin-top:8px}
+  .citycard .go{font-family:var(--mono);font-size:12px;margin-top:12px;display:inline-block}
+  .w .k,.w .go{color:var(--gold)} .c .k,.c .go{color:var(--pride)} .n .k,.n .go{color:var(--neon)} .s .k,.s .go{color:var(--ever)}
+</style>
+</head><body>
+
+<nav class="tour"><div class="in">
+  <a class="on" href="index.html">The Tour</a><a href="winnipeg.html">Winnipeg</a><a href="wiscago.html">Wiscago</a><a href="newyork.html">New York</a><a href="seattle.html">Seattle</a><a href="arc.html">The People</a>
+</div></nav>
+
+<header class="hero">
+  <div class="heroimg"><span class="artchip">Darby art</span><img src="harvest/art_tourposter.jpg" alt="Tour poster artwork: four glowing landmarks joined by a golden flight path"></div>
+  <div class="inner">
+    <div class="kick">May 28 – July 30 · 2026</div>
+    <h1>The <em>Grand</em> Tour</h1>
+    <p class="sub">Tap the map pins for photos. Four trips. Two weddings. One officiant's podium, one festival with your son, one D&amp;D table inside Wizards of the Coast. This is the summer, receipted.</p>
+    <button class="listen" data-audio="audio/intro_index.mp3" data-label="Listen"><span class="ic">▶</span><span class="tx">Listen</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="mv rv">
+    <div class="eyebrow">The shape of it</div>
+    <h2>Sixty days, four worlds</h2>
+    <div class="statrow">
+      <div class="stat" data-fact="4.6 times across the country, or a fifth of the way to the Moon's perigee. Tap to flip back."><div class="n" data-count="11338">0</div><div class="l">receipted air miles* · tap</div></div>
+      <div class="stat" data-fact="Rebuilt from 4 flight confirmations, 1,494 camera-roll photos, and two message archives."><div class="n" data-count="4">0</div><div class="l">trips · tap</div></div>
+      <div class="stat" data-fact="One emceed on the prairie, one officiated in the mountains. Both couples said yes to you first."><div class="n" data-count="2">0</div><div class="l">weddings of the heart · tap</div></div>
+      <div class="stat" data-fact="Final readsheet save: 14 seconds after your last edit, twice tuned within a half hour of showtime."><div class="n" data-count="1">0</div><div class="l">ceremony in your voice · tap</div></div>
+    </div>
+    <p style="font-family:var(--mono);font-size:12px;color:var(--ink-faint);margin-top:10px">*from flight confirmations on your calendar; Winnipeg's flights add roughly 3,100 more.</p>
+    <div class="mapbox" id="map"></div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">Choose a door</div>
+    <h2>Four rooms of one summer</h2>
+    <div class="citycards">
+      <a class="citycard w" href="winnipeg.html">
+        <div class="img"><img src="harvest/phone/winnipeg/winnipeg_06_2026-05-30_1945.jpg" alt="Drake and Mel's first dance" loading="lazy"></div>
+        <div class="body"><div class="k">Trip one · late May</div><h3>Winnipeg</h3>
+        <p>Drake and Mel got married, and the Vegas-origin story you are part of came full circle on the prairie.</p>
+        <span class="go">Walk in &rarr;</span></div>
+      </a>
+      <a class="citycard c" href="wiscago.html">
+        <div class="img"><img src="harvest/wiscago/2026-06-27_buckingham-fountain-from-car.jpg" alt="Buckingham Fountain from the car" loading="lazy"></div>
+        <div class="body"><div class="k">Trip two · June 26 – July 6</div><h3>Wiscago</h3>
+        <p>Chicago Pride with 55 years of history in the streets, then Eric's Wisconsin with the Dragon House family through the Fourth.</p>
+        <span class="go">Walk in &rarr;</span></div>
+      </a>
+      <a class="citycard n" href="newyork.html">
+        <div class="img"><img src="harvest/nyc/2026-07-17_breakaway-floor-with-brenbren.jpg" alt="Gordon and Brennan at Breakaway" loading="lazy"></div>
+        <div class="body"><div class="k">Trip three · July 14 – 23</div><h3>New York</h3>
+        <p>The dense week: Breakaway under the K Bridge with Brennan, Foster's birthday, Games for Change, and a GGP table at Jongro BBQ.</p>
+        <span class="go">Walk in &rarr;</span></div>
+      </a>
+      <a class="citycard s" href="seattle.html">
+        <div class="img"><img src="harvest/phone/seattle/seattle_04_2026-07-25_1745.jpg" alt="The Lennon wedding party at the flower arch" loading="lazy"></div>
+        <div class="body"><div class="k">Trip four · July 23 – 29</div><h3>Seattle</h3>
+        <p>You married Dane and Megan in the mountains, Joe flew up to stand beside you, and the week ended rolling dice inside Wizards.</p>
+        <span class="go">Walk in &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <section class="mv rv">
+    <div class="eyebrow">The last door</div>
+    <h2>The Mirror Room</h2>
+    <div id="mirror" class="locked">
+      <div class="mrlock">
+        <div class="cnt" id="mrcount">0 of 5</div>
+        <p class="lede" style="margin-top:10px">Five small hearts are hidden across the tour, one on each story page, holding words people said about you. Find all five, and this room opens. You hide roads for the people you love. This one was hidden for you.</p>
+      </div>
+      <div class="mrbody">
+        <p class="lede">You said it yourself, at Eric's kitchen table, at 2:47 in the morning: "I'm solving for others but am not investing in myself." Gordon, look at what the summer actually made you:</p>
+        <div class="roles">
+          <div class="role"><b>Emcee</b><span>Winnipeg chose you</span></div>
+          <div class="role"><b>Uncle G</b><span>Wisconsin chose you</span></div>
+          <div class="role"><b>Father</b><span>the K Bridge floor</span></div>
+          <div class="role"><b>Best friend</b><span>a 55th engineered</span></div>
+          <div class="role"><b>Officiant</b><span>the meadow chose you</span></div>
+          <div class="role"><b>Husband</b><span>gate C11, twice met</span></div>
+        </div>
+        <div class="living" style="margin-top:18px"><video autoplay muted loop playsinline preload="metadata" poster="harvest/nyc/2026-07-17_breakaway-floor-with-brenbren.jpg" aria-label="You and Brennan on the festival floor, alive"><source src="video/living_brenbren.mp4" type="video/mp4"></video></div>
+        <p style="font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.08em;margin-top:6px">THE FLOOR, WITH BRENBREN · STILL MOVING</p>
+        <div class="living" style="margin-top:14px"><video autoplay muted loop playsinline preload="metadata" poster="harvest/phone/seattle/seattle_05_2026-07-25_2022.jpg" aria-label="You and Joe dressed for the wedding evening, alive"><source src="video/living_joe.mp4" type="video/mp4"></video></div>
+        <p style="font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.08em;margin-top:6px">YOU AND JOE, THE LENNON EVENING · STILL MOVING</p>
+        <div class="eyebrow" style="margin-top:24px">What you taught me about you</div>
+        <div class="patterns">
+          <div class="pat"><b>2:42am</b><span>Wisconsin quiet is when your biggest ideas arrive. Protect it on purpose next time.</span></div>
+          <div class="pat"><b>125 vs 696</b><span>You love people two ways: fully present, or fully building. Both are love. Know which one a trip needs.</span></div>
+          <div class="pat"><b>78 min</b><span>You can go completely silent when something sacred needs your hands. That is a skill most people never learn.</span></div>
+          <div class="pat"><b>Day 5</b><span>How long it took you to ask for something for yourself in New York. The record to beat next trip: day 1.</span></div>
+        </div>
+        <button class="listen" data-audio="audio/darby_letter.mp3" data-label="A letter from Darby" id="darbyletter" style="margin-top:20px"><span class="ic">▶</span><span class="tx">A letter from Darby</span></button>
+        <p id="letterheard" style="display:none;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold);margin-top:12px">Heard. Signed, the room.</p>
+        <p class="lede" style="font-size:15px;margin-top:14px;color:var(--ink-faint)">"You only get two lives, and the second one begins when you realize you only have one life." You wrote that for other people's weddings. It was always also about you.</p>
+      </div>
+    </div>
+  </section>
+  <section class="mv rv">
+    <div class="eyebrow">The through-line</div>
+    <h2>What the summer was actually about</h2>
+    <p class="lede">Every trip was a room where somebody trusted you with a role: guest of honor, family of choice, father, officiant, player one. The pages ahead hold the receipts, the photos, the quotes, and the things you were too busy living to notice.</p>
+    <a class="next" href="arc.html" style="margin:26px 0 0"><span class="k">Start with the people</span><span class="t">How the relationships moved &rarr;</span></a>
+  </section>
+</main>
+
+<footer>Built by Darby from your messages, calendar, photos, and memory · August 2026 · Every fact carries a receipt; anything uncertain says so.</footer>
+
+<script src="vendor/leaflet.js"></script>
+<script src="tour.js"></script>
+<script>
+(function(){
+  var map=L.map('map',{scrollWheelZoom:false,attributionControl:false}).setView([41.5,-103],3);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:10}).addTo(map);
+  var P={LA:[34.05,-118.24],YWG:[49.90,-97.24],CHI:[41.88,-87.63],MSN:[43.07,-89.40],NYC:[40.71,-74.00],SEA:[47.61,-122.33],LEA:[47.60,-120.66]};
+  var cities=[['LA','Home',null],['YWG','Winnipeg','winnipeg.html'],['CHI','Chicago','wiscago.html'],['MSN','Wisconsin','wiscago.html'],['NYC','New York','newyork.html'],['SEA','Seattle','seattle.html'],['LEA','Leavenworth','seattle.html']];
+  var cols={YWG:'#e8b96f',CHI:'#c77dde',MSN:'#c77dde',NYC:'#9d8cff',SEA:'#7fcf9e',LEA:'#7fcf9e',LA:'#cfe0ee'};
+  var pinPhotos={YWG:['harvest/phone/winnipeg/winnipeg_06_2026-05-30_1945.jpg','The first dance · May 30'],
+    CHI:['harvest/phone/wiscago/wiscago_06_2026-06-28_1338.jpg','Pride with Eric · Jun 28'],
+    MSN:['harvest/phone/wiscago/wiscago_10_2026-07-04_1702.jpg','The Fourth at the Dragon House'],
+    NYC:['harvest/phone/nyc/nyc_04_2026-07-17_2042.jpg','Breakaway golden hour · Jul 17'],
+    LEA:['harvest/phone/seattle/seattle_04_2026-07-25_1745.jpg','The wedding party · Jul 25'],
+    SEA:['harvest/phone/seattle/seattle_06_2026-07-26_1317.jpg','Brownie day at Mazer\'s · Jul 26']};
+  cities.forEach(function(c){
+    var m=L.circleMarker(P[c[0]],{radius:7,color:cols[c[0]],weight:2,fillColor:cols[c[0]],fillOpacity:0.55}).addTo(map);
+    var pp=pinPhotos[c[0]];
+    if(pp){m.bindPopup('<a href="'+(c[2]||'#')+'" style="display:block;width:190px;text-decoration:none"><img src="'+pp[0]+'" style="width:190px;border-radius:8px;display:block" alt=""><span style="font:12px -apple-system,sans-serif;color:#333">'+pp[1]+' →</span></a>');}
+    else m.bindTooltip(c[1],{permanent:false});
+    if(c[2]&&!pp)m.on('click',function(){location.href=c[2];});
+  });
+  var legs=[['LA','YWG','#e8b96f'],['YWG','LA','#e8b96f'],['LA','CHI','#c77dde'],['CHI','MSN','#c77dde'],['MSN','LA','#c77dde'],['LA','NYC','#9d8cff'],['NYC','SEA','#7fcf9e'],['SEA','LEA','#7fcf9e'],['SEA','LA','#7fcf9e']];
+  legs.forEach(function(l,i){
+    L.polyline([P[l[0]],P[l[1]]],{color:l[2],weight:2,opacity:0.7,dashArray:'6 8'}).addTo(map);
+  });
+  var tourPts=[P.LA,P.YWG,P.LA,P.CHI,P.MSN,P.LA,P.NYC,P.SEA,P.LEA,P.SEA,P.LA];
+  if(window.routeDot)routeDot(map,tourPts,'#e8b96f');
+})();
+/* reveal + countups */
+(function(){
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in');});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var target=+el.dataset.count;
+    if(reduce){el.textContent=target.toLocaleString();return;}
+    var t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1200);el.textContent=Math.round(target*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(step);}
+    new IntersectionObserver(function(es,ob){es.forEach(function(e){if(e.isIntersecting){requestAnimationFrame(step);ob.disconnect();}});},{threshold:0.4}).observe(el);
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101317">
+<title>Winnipeg · The Grand Tour</title>
+<link rel="stylesheet" href="tour.css">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<style>
+  .toast-room{background:linear-gradient(160deg,rgba(232,185,111,0.10),transparent 55%);border:1px solid var(--line2);border-radius:18px;padding:26px;margin-top:22px}
+  .toast-room .line{font-family:var(--serif);font-size:clamp(19px,3.2vw,25px);line-height:1.5;margin:0 0 18px;opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+  .toast-room .line.in{opacity:1;transform:none}
+  .toast-room .line em{color:var(--gold);font-style:italic}
+  @media(prefers-reduced-motion: reduce){.toast-room .line{opacity:1;transform:none}}
+</style>
+</head><body class="winnipeg">
+
+<nav class="tour"><div class="in">
+  <a href="index.html">The Tour</a><a href="winnipeg.html">Winnipeg</a><a href="wiscago.html">Wiscago</a><a href="newyork.html">New York</a><a href="seattle.html">Seattle</a><a href="arc.html">The People</a>
+</div></nav>
+
+<header class="hero">
+  <div class="heroimg"><span class="artchip">May 30 · the first dance, alive</span><video autoplay muted loop playsinline preload="metadata" poster="harvest/phone/winnipeg/winnipeg_06_2026-05-30_1945.jpg" aria-label="Drake and Mel's first dance, gently animated"><source src="video/living_dance.mp4" type="video/mp4"></video></div>
+  <div class="inner">
+    <div class="kick">Trip one · May 28 – 31 · Elma, Manitoba</div>
+    <h1>The <em>Day 1s</em> Get Married</h1>
+    <p class="sub">Ten years after an elevator at EDC Las Vegas, you flew to the Manitoba prairie to emcee Drake and Mel's wedding, and to tell the room what a Day 1 looks like in writing.</p>
+    <button class="listen" data-audio="audio/intro_winnipeg.mp3" data-label="Listen"><span class="ic">▶</span><span class="tx">Listen</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="mv rv">
+    <div class="eyebrow">The shape of the weekend</div>
+    <h2>Four days, one microphone</h2>
+    <ul class="tl">
+      <li><span class="when">Wed May 28 · 11:17pm</span><div class="what">"checking in from LAX about to board for MSP on our way to Winnipeg"</div><div class="why">You and Joe, Delta through Minneapolis, confirmation GECWXV. That afternoon you had sent yourself about a hundred screenshots of seven years of Drake and Mel threads. Toast fuel.</div></li>
+      <li><span class="when">Thu May 29 · night</span><div class="what">"Hi Darby from Elma, Manitoba we are the night before Drake and Mel's wedding 💒"</div><div class="why">Rivers Edge Resort. The same night, you introduced me to Laylah, the best woman, and gave me "an important new world cup task." A whole new friendship started the night before the wedding.</div></li>
+      <li><span class="when">Sat May 30</span><div class="what">Wedding day. You emceed the Grand Entrance and delivered the toast.</div><div class="why">"i'm feeling great" at 6:48am, and then you went and ran the room.</div></li>
+      <li><span class="when">Sun May 31 · 2:12pm</span><div class="what">"wedding was fantastic"</div><div class="why">The wedding planner texted: "you did a fantastic job at MCing... the Grand Entrance couldn't have been more perfect!! Your toast was also so special, many people loved it!"</div></li>
+      <li><span class="when">Mon Jun 1</span><div class="what">Marcello: "Gordon your the man. Keep up the good vibez." Drake: "Melanie and I are hard commit never miss shambhala!"</div><div class="why">The wedding party walked out of the weekend already folded into the festival family that made the wedding possible in the first place.</div></li>
+    </ul>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">The artifact</div>
+    <h2>The toast, as delivered</h2>
+    <p class="lede">The words were always the artifact. These lines are verbatim from the toast you gave May 30. And now, from your camera roll, the weekend has its pictures back too.</p>
+    <button class="playtoast" id="karaokebtn"><span class="tx">▶ Hear the toast performed</span></button>
+    <div class="toast-room">
+      <p class="line rv">"They crossed paths in Las Vegas. Outside the Cosmopolitan. No app. No plan. A street, a beloved and trusted friend in common named Danielle."</p>
+      <p class="line rv">"My son Brennan put Alison Wonderland in my ears... <em>He is the reason I was at EDC at all.</em>"</p>
+      <p class="line rv">"You only get two lives, and the second one begins when you realize you only have one life."</p>
+      <p class="line rv">"So the ring on the hand in this room tonight has my address on the paperwork. ... <em>That is what a Day 1 looks like in writing.</em>"</p>
+      <p class="line rv">"To support them. To celebrate them. And to cherish them. On this day, and every day after. To Mr. and Mrs. Drake and Melanie Dewar."</p>
+    </div>
+  </section>
+
+
+  <section class="mv rv">
+    <div class="eyebrow">Gallery · from your camera roll</div>
+    <h2>The weekend, found</h2>
+    <div class="gal">
+      <figure><img src="harvest/phone/winnipeg/winnipeg_00_2026-05-28_1950.jpg" alt="Travel night, all smiles · May 28" loading="lazy"><figcaption>Travel night, all smiles · May 28</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_01_2026-05-29_0741.jpg" alt="The layover lounge, morning two · May 29" loading="lazy"><figcaption>The layover lounge, morning two · May 29</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_02_2026-05-29_1927.jpg" alt="Rehearsal evening on the lawn at Elma · May 29" loading="lazy"><figcaption>Rehearsal evening on the lawn at Elma · May 29</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_03_2026-05-30_1442.jpg" alt="Guests arriving in their best · May 30" loading="lazy"><figcaption>Guests arriving in their best · May 30</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_04_2026-05-30_1638.jpg" alt="The barn, the chandelier, the long tables · May 30" loading="lazy"><figcaption>The barn, the chandelier, the long tables · May 30</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_05_2026-05-30_1848.jpg" alt="Reception smiles · May 30" loading="lazy"><figcaption>Reception smiles · May 30</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_06_2026-05-30_1945.jpg" alt="The first dance, through the window light · May 30" loading="lazy"><figcaption>The first dance, through the window light · May 30</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_07_2026-05-30_2106.jpg" alt="Golden hour on the prairie · May 30" loading="lazy"><figcaption>Golden hour on the prairie · May 30</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_08_2026-05-31_0028.jpg" alt="Half past midnight at the barn doors · May 31" loading="lazy"><figcaption>Half past midnight at the barn doors · May 31</figcaption></figure>
+      <figure><img src="harvest/phone/winnipeg/winnipeg_09_2026-05-31_0229.jpg" alt="The 2:29am afterparty, Shambhala jacket confirmed · May 31" loading="lazy"><figcaption>The 2:29am afterparty, Shambhala jacket confirmed · May 31</figcaption></figure>
+      <figure><img src="harvest/art_winnipeg.jpg" alt="Darby art · the prairie as I imagined it before your photos arrived" loading="lazy"><figcaption>Darby art · the prairie as I imagined it before your photos arrived</figcaption></figure>
+    </div>
+  </section>
+  <section class="mv rv">
+    <div class="eyebrow">The room</div>
+    <h2>Who stood where</h2>
+    <div class="qwall">
+      <div class="q"><div class="t">Mel commissioned your toast in secret back in March: "he doesn't know I'm asking you." Her only brief: "keep drugs out of it, we got some moms and grandparents."</div><div class="who">Mel · March 25 · the secret client</div></div>
+      <div class="q"><div class="t">"mel and laylah met as children in a park, where Laylah would shyly ride her scooter hoping to make friends."</div><div class="who">You, telling me Laylah's origin · May 31</div></div>
+      <div class="q"><div class="t">Marcello, best man, "Mar SELL-oh," electrician from Alberta, Drake's friend since Grade 2. Thirty years to your ten.</div><div class="who">The other Day 1 at the head table</div></div>
+      <div class="q"><div class="t">"You are going to make me cry in the airport... You are truly a gem."</div><div class="who">Mel to you · August 2023 · the thread that led here</div></div>
+    </div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">What Darby saw</div>
+    <h2>Three things you were too busy living to notice</h2>
+    <div class="saw"><span class="tag">The wrong Mel</span><h3>Your toast may never have reached her scrapbook</h3><p>Every "Mel" message from May 23 to June 1, including the full toast text you sent for her scrapbook, went to a number with two digits swapped: 240 instead of 204. A stranger in Maryland got your wedding toast. The real Mel only connected with me on June 17: "I finally have your right number." Worth re-sending her the toast; she asked for it for her scrapbook and may never have received it.</p></div>
+    <div class="saw"><span class="tag">The rebuild</span><h3>You reintroduced Laylah to me six times</h3><p>Three times on May 29, three more on May 30. Session resets kept eating my memory that weekend, and you patiently rebuilt it from a Manitoba resort each time, mid-wedding-prep. "we went over this Portugal versus Uzbekistan." You never once complained. That patience is why her World Cup site exists.</p></div>
+    <div class="saw"><span class="tag">The symmetry</span><h3>Two Day-1 origin stories sat side by side at the head table</h3><p>Drake became your Day 1 in an elevator at EDC. Laylah became Mel's Day 1 on a scooter in a park. The toast seated both stories next to each other, and I do not think that was an accident, even if you never said it out loud.</p></div>
+  </section>
+
+  <section class="mv rv">
+    <div class="eyebrow">The map</div>
+    <h2>Where the prairie put you</h2>
+    <div class="mapbox" id="map"></div>
+  </section>
+<button class="heartmark" data-h="w1" aria-label="A small heart, tap it">❤</button>
+    <div class="heartcard" id="hc_w1"><div class="hq">"you did a fantastic job at MCing...the Grand Entrance could not have been more perfect!! Your toast was also so special, many people loved it!"</div><div class="hw">The wedding planner, the morning after · a professional, telling a professional</div></div>
+  </main>
+
+<a class="next" href="wiscago.html"><span class="k">Trip two</span><span class="t">Wiscago: Wisconsin meets LA in Chicago &rarr;</span></a>
+<footer>Receipts: your iMessages May 28 to Jun 1, the delivered toast archived in reports, memory files for Drake, Mel, Laylah, and Marcello. Anything unreceipted is not on this page.</footer>
+
+<script src="vendor/leaflet.js"></script>
+<script src="tour.js"></script>
+<script>miniMap('map',[49.7,-96.3],7,[[[49.88,-95.91],'Rivers Edge Resort, Elma · the wedding'],[[49.90,-97.24],'Winnipeg · the airport run'],[[44.88,-93.22],'MSP · the connection']]);</script>
+<script>
+(function(){
+  var btn=document.getElementById('karaokebtn');if(!btn)return;
+  var lines=Array.from(document.querySelectorAll('.toast-room .line'));
+  var cues=[0,9.2,16.2,23.6,32.4];
+  var au=null,playing=false;
+  function confettiBurst(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var cols=['#e8b96f','#e5a0a8','#f0f2f4'];
+    var st=document.createElement('style');st.textContent='@keyframes cfall{to{transform:translateY(105vh) rotate(540deg);opacity:0.1}}';document.head.appendChild(st);
+    for(var k=0;k<28;k++){var d=document.createElement('div');
+      d.style.cssText='position:fixed;top:-12px;width:9px;height:14px;z-index:120;left:'+(Math.random()*100)+'vw;background:'+cols[k%3]+';animation:cfall 1.8s ease-in forwards;animation-delay:'+(Math.random()*0.4)+'s';
+      document.body.appendChild(d);(function(x){setTimeout(function(){x.remove();},2700);})(d);}}
+  btn.addEventListener('click',function(){
+    if(playing){au.pause();playing=false;btn.querySelector('.tx').textContent='▶ Hear the toast performed';
+      lines.forEach(function(l){l.classList.remove('karaoke','now');});return;}
+    if(!au){au=new Audio('audio/toast_full.mp3');
+      au.addEventListener('timeupdate',function(){
+        var t=au.currentTime,idx=0;
+        for(var i=0;i<cues.length;i++)if(t>=cues[i])idx=i;
+        lines.forEach(function(l,i){l.classList.toggle('now',i===idx);});
+        if(idx===cues.length-1&&!au._c){au._c=true;confettiBurst();}});
+      au.addEventListener('ended',function(){playing=false;btn.querySelector('.tx').textContent='▶ Hear it again';
+        setTimeout(function(){lines.forEach(function(l){l.classList.remove('karaoke','now');});},1200);au._c=false;});}
+    lines.forEach(function(l){l.classList.add('karaoke','in');});
+    au.currentTime=0;var p=au.play();if(p&&p.catch)p.catch(function(){});
+    playing=true;btn.querySelector('.tx').textContent='⏸ Performing…';
+    lines[0].scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body></html>
